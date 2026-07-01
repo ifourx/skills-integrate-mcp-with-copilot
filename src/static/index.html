@@ -1,50 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mergington High School Activities</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header>
-      <h1>Mergington High School</h1>
-      <h2>Extracurricular Activities</h2>
-    </header>
 
-    <main>
-      <section id="activities-container">
-        <h3>Available Activities</h3>
-        <div id="activities-list">
-          <!-- Activities will be loaded here -->
-          <p>Loading activities...</p>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mergington High School Activities</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header>
+    <div class="header-content">
+      <div>
+        <h1>Mergington High School</h1>
+        <h2>Extracurricular Activities</h2>
+      </div>
+      <div class="user-menu">
+        <button id="user-icon-btn" class="user-icon-btn" title="User menu">👤</button>
+        <div id="user-dropdown" class="user-dropdown hidden">
+          <div id="dropdown-logged-out">
+            <button id="login-btn" class="dropdown-btn">Login</button>
+          </div>
+          <div id="dropdown-logged-in" class="hidden">
+            <span id="logged-in-user" class="dropdown-username"></span>
+            <button id="logout-btn" class="dropdown-btn">Logout</button>
+          </div>
         </div>
-      </section>
+      </div>
+    </div>
+  </header>
 
-      <section id="signup-container">
-        <h3>Sign Up for an Activity</h3>
-        <form id="signup-form">
-          <div class="form-group">
-            <label for="email">Student Email:</label>
-            <input type="email" id="email" required placeholder="your-email@mergington.edu" />
-          </div>
-          <div class="form-group">
-            <label for="activity">Select Activity:</label>
-            <select id="activity" required>
-              <option value="">-- Select an activity --</option>
-              <!-- Activity options will be loaded here -->
-            </select>
-          </div>
-          <button type="submit">Sign Up</button>
-        </form>
-        <div id="message" class="hidden"></div>
-      </section>
-    </main>
+  <!-- Login Modal -->
+  <div id="login-modal" class="modal hidden">
+    <div class="modal-content">
+      <span class="modal-close">&times;</span>
+      <h3>Teacher Login</h3>
+      <form id="login-form">
+        <div class="form-group">
+          <label for="login-username">Username:</label>
+          <input type="text" id="login-username" required placeholder="Enter username" />
+        </div>
+        <div class="form-group">
+          <label for="login-password">Password:</label>
+          <input type="password" id="login-password" required placeholder="Enter password" />
+        </div>
+        <button type="submit">Login</button>
+      </form>
+      <div id="login-message" class="message hidden"></div>
+    </div>
+  </div>
 
-    <footer>
-      <p>&copy; 2026 Mergington High School</p>
-    </footer>
+  <main>
+    <section id="activities-container">
+      <h3>Available Activities</h3>
+      <div id="activities-list">
+        <!-- Activities will be loaded here -->
+        <p>Loading activities...</p>
+      </div>
+    </section>
 
-    <script src="app.js"></script>
-  </body>
+    <section id="signup-container" class="hidden">
+      <h3>Sign Up for an Activity</h3>
+      <form id="signup-form">
+        <div class="form-group">
+          <label for="email">Student Email:</label>
+          <input type="email" id="email" required placeholder="your-email@mergington.edu" />
+        </div>
+        <div class="form-group">
+          <label for="activity">Select Activity:</label>
+          <select id="activity" required>
+            <option value="">-- Select an activity --</option>
+            <!-- Activity options will be loaded here -->
+          </select>
+        </div>
+        <button type="submit">Sign Up</button>
+      </form>
+      <div id="message" class="hidden"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Mergington High School</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+
 </html>
